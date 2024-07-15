@@ -1,7 +1,13 @@
+from .base import * #noqa
+from .base import env
+
+
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-0sxlmjcv(^4)ittln!wu!y72kvhd@41$=1@9ta4sqthzxy3)ok"
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="lvMTCrYQrMCWziGFvvD_up_lg3eD6y2VMrk0lf4fUi2-rrM9WjY",)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8080"]
+
