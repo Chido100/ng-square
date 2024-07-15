@@ -1,5 +1,6 @@
+import environ
 from pathlib import Path
-from pathlib import Path
+
 
 env = environ.Env()
 
@@ -21,7 +22,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.site",
+    "django.contrib.sites",
 ]
 
 THIRD_PARTY_APP = [
@@ -33,7 +34,11 @@ THIRD_PARTY_APP = [
     "corsheaders",
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "core_apps.users",
+    "core_apps.profiles",
+    "core_apps.common",
+]
 
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APP + LOCAL_APPS
